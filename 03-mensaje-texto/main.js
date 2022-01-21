@@ -9,23 +9,23 @@ let numPad = {
     7: "pqrs",
     8: "tuv",
     9: "wxyz",
-}
+};
 
 const buscarNumero = letra => {
-    let numeros = Object.keys(numPad)
+    let numeros = Object.keys(numPad);    
     let resultado = "";
 
-    numeros.forEach(num => {
-        for (let i = 0; i < numPad[num].lenght; i++) {
+    numeros.forEach(num => {        
+        for (let i = 0; i < numPad[num].length; i++) {
             if (letra === numPad[num][i]) {
-                for (let j = 0; j < i; j++) {
-                    resultado = `${resultado} ${num}`                         
+                for (let j = 0; j <= i; j++) {
+                    resultado = `${resultado}${num}`  
                 }                        
             }
         }
     })
 
-    return tecla
+    return resultado
 }
 
 const convertirTexto = texto => {
